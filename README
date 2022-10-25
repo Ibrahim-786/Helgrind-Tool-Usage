@@ -1,0 +1,16 @@
+$ gcc -Wall -gstabs -pthread helgrind_threads_good.c -o helgrind_threads_good
+$ valgrind  --tool=helgrind  ./helgrind_threads_good
+
+
+$gcc -Wall -g -pthread helgrind_threads_bad.c -o helgrind_threads_bad
+$ valgrind -v  --tool=helgrind  ./helgrind_threads_bad
+
+
+
+$gcc -Wall -g -pthread helgrind_threads_bad_solved.c -o helgrind_threads_bad_solved
+$ valgrind -v  --tool=helgrind  ./helgrind_threads_bad_solved
+
+
+
+$ $gcc -Wall -g -pthread helgrind_threads_race.c -o helgrind_threads_race
+$ valgrind -v  --tool=helgrind  ./helgrind_threads_race
